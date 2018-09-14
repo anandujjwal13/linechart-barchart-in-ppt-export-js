@@ -135,7 +135,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app__header">
-          <div>Select any of the following chart type to export data in a powerpoint presentation slide !</div>
+          <div>Select any of the following chart type to export data in a powerpoint presentation slide for the sample data in the below table!</div>
         </div>
         <div className="app__download">
           <div className="app__download__card" onClick={() => this.createLineChart()}>
