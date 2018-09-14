@@ -4,8 +4,7 @@ import lineChartLogo from './linechart.png';
 import './App.css';
 import _ from 'lodash';
 import PptxGenJS from 'pptxgenjs';
-const pptx = new PptxGenJS();
-pptx.setBrowser(true);
+
 
 class App extends Component {
   constructor() {
@@ -25,7 +24,7 @@ class App extends Component {
       { month: 'December', highTemp: 23, lowTemp: 8 }
     ];
     let chartConfigOptions = {
-      x: 0.5, y: 1.1, w: 10, h: 5.5,
+      x: 0.5, y: 1.1, w: 12, h: 5.5,
       showTitle: true,
       titlePos: { x: -100, y: 10 },
       title: 'Average monthly temperature ranges of an Indian City',
@@ -65,6 +64,8 @@ class App extends Component {
 
   createLineChart() {
     let labels = _.map(this.state.data, obj => obj.month);
+    const pptx = new PptxGenJS();
+    pptx.setBrowser(true);
     pptx.setLayout('LAYOUT_WIDE');
     let slide = pptx.addNewSlide();
     let highTempData = {
@@ -92,6 +93,8 @@ class App extends Component {
 
   createBarChart() {
     let labels = _.map(this.state.data, obj => obj.month);
+    const pptx = new PptxGenJS();
+    pptx.setBrowser(true);
     pptx.setLayout('LAYOUT_WIDE');
     let slide = pptx.addNewSlide();
     let highTempDataObject = {
